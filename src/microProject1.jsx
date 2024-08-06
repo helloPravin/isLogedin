@@ -6,15 +6,17 @@ function Apples() {
 
   let [rightBasketCount, setRightBasketCount] = useState(totalApples);
   let sendRight = () => {
-    if (rightBasketCount == 0) return;
-    setLeftBasketCount(++leftBasketCount);
-    setRightBasketCount(--rightBasketCount);
+    if (rightBasketCount != 0) {
+      setLeftBasketCount(++leftBasketCount);
+      setRightBasketCount(totalApples - leftBasketCount);
+    }
   };
   let [leftBasketCount, setLeftBasketCount] = useState(0);
   let sendLeft = () => {
-    if (leftBasketCount == 0) return;
-    setLeftBasketCount(--leftBasketCount);
-    setRightBasketCount(++rightBasketCount);
+    if (leftBasketCount != 0) {
+      setRightBasketCount(++rightBasketCount);
+      setLeftBasketCount(totalApples - rightBasketCount);
+    }
   };
   return (
     <>

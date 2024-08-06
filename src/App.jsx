@@ -8,21 +8,25 @@ import Footer from "./Footer.jsx";
 let projectTitle = "only10Apples";
 const projectDescription =
   "You can transfer apples from right to left basket & vice versa. But you have only 10 apples do do so.";
-const projectCode = `
+const projectCode = `import { useState } from "react";
+import Cherry from "./assets/Cherry.svg";
+
 function Apples() {
   let totalApples = 10;
 
   let [rightBasketCount, setRightBasketCount] = useState(totalApples);
   let sendRight = () => {
-    if (rightBasketCount == 0) return;
-    setLeftBasketCount(++leftBasketCount);
-    setRightBasketCount(--rightBasketCount);
+    if (rightBasketCount != 0) {
+      setLeftBasketCount(++leftBasketCount);
+      setRightBasketCount(totalApples - leftBasketCount);
+    }
   };
   let [leftBasketCount, setLeftBasketCount] = useState(0);
   let sendLeft = () => {
-    if (leftBasketCount == 0) return;
-    setLeftBasketCount(--leftBasketCount);
-    setRightBasketCount(++rightBasketCount);
+    if (leftBasketCount != 0) {
+      setRightBasketCount(++rightBasketCount);
+      setLeftBasketCount(totalApples - rightBasketCount);
+    }
   };
   return (
     <>
@@ -61,6 +65,7 @@ function Apples() {
     </>
   );
 }
+export default Apples;
 `;
 function App() {
   return (
