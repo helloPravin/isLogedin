@@ -1,3 +1,4 @@
+import propTypes from "prop-types";
 function Description(props) {
   return (
     <div className="flex flex-col items-center font-mono text-xs">
@@ -21,4 +22,8 @@ function Description(props) {
     </div>
   );
 }
+Description.propTypes = {
+  projectTitle: propTypes.string,
+  projectDescription: propTypes.string,
+};
 export default Description;
