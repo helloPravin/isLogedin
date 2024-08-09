@@ -1,14 +1,4 @@
-import Logo from "./assets/react.svg";
-import Header from "./Header.jsx";
-import Description from "./Description.jsx";
-import Project from "./microProject2.jsx";
-import Code from "./Code.jsx";
-import Footer from "./Footer.jsx";
-
-let projectTitle = "isLoggedin?";
-const projectDescription =
-  "You can toggle login button to toggle boolean value of isLoggedin and based on the value the navbar will be conditionally rendered.";
-const projectCode = `import { useState } from "react";
+import { useState } from "react";
 
 function Project(props) {
   let [loginStatus, setLoginStatus] = useState(false);
@@ -60,23 +50,3 @@ function Project(props) {
   );
 }
 export default Project;
-`;
-function App() {
-  return (
-    <>
-      <Header projectLogo={Logo} projectTitle={projectTitle} />
-      <Description
-        projectTitle={projectTitle}
-        projectLogo={Logo}
-        projectDescription={projectDescription}
-      />
-      <div className="my-12">
-        <Project projectLogo={Logo} />
-      </div>
-      <Code projectCode={projectCode} />
-      <Footer />
-    </>
-  );
-}
-
-export default App;

@@ -17,7 +17,7 @@ function Description(props) {
       </div>
       <div className="w-auto rounded-b-xl border-x border-b border-black p-1">
         <span className="font-extralight">Concept Used : </span>
-        <span className="font-bold">useState</span>
+        <span className="font-bold">useState, Conditional Rendering</span>
       </div>
     </div>
   );
